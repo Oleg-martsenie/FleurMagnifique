@@ -30,10 +30,13 @@ html {
     --Background-Selection:#006A4E;
     --banner-Color:#82C953;
     --text-Color:#222;
+    --box-Shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.144);
+
 
     --Header-bacco:#B8EBA9;
 
-    --font-Banner-Size: 4.8rem;
+    --font-Banner-Size: 4rem;
+    --font-Banner-MinSize: 1.7rem;
     --font-Banner-Weight: 800;
 
     --Light-White:#EEE;
@@ -198,37 +201,237 @@ section {
     padding: .5rem 0;
 }
 
-.home .home-slider .box .content a {
-    font-size: 1.3rem;
-    border: .1rem solid var(--banner-Color);
-    padding: 1rem 1.7rem;
-    color: var(--text-Color);
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 3rem;
+    background-color: var(--Header-bacco);
+    color: #FFF;
+    font-size: 1.7rem;
     font-weight: 600;
+    cursor: pointer;
+    border-radius: .2rem;
 }
 
-.home .home-slider .box .content .fa-arrow-right {
-    font-size: 1.2rem;
+.btn:hover {
+    color: #FFF;
+    background-color:var(--Button-Hover);
+}
+
+.banner-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.swiper-pagination-bullet {
+    cursor: pointer;
+}
+
+.banner-container .banner {
+    flex: 1 1 40rem;
+    height: 25rem;
+    border: .1rem solid rgba(0,0,0,0.3);
+    box-shadow: var(--box-Shadow);
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-container .banner .content {
+    position: absolute;
+    top: 50%;
+    left:4%;
+    transform: translateY(-50%);
+}
+
+.banner-container .banner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.banner-container .banner .content span {
+    color: var(--Button-Hover);
+    font-size: var(--font-Banner-MinSize);
+    letter-spacing: 2px;
+}
+
+.banner-container .banner .content h3 {
+    color: var(--text-Color);
+    font-size: var(--font-Banner-Size);
+    font-weight: var(--font-Banner-Weight);
+    letter-spacing: 3px;
+}
+
+.banner-container .banner:hover img {
+    transform: scale(1.2);
+}
+
+.heading {
+    font-size: var(--font-Banner-Size);
+    font-weight: var(--font-Banner-Weight);
+    color:var(--text-Color);
+    padding-left: 1rem;
+    border-left: .9rem solid var(--Header-bacco);
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.category .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.category .box-container .box {
+    position: relative;
+    flex: 1 1 23rem;
+    height: 35rem;
+    overflow: hidden;
+    border: .1rem solid rgba(0,0,0,0.3);
+    box-shadow: var(--box-Shadow);
+}
+
+.category .box-container .box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.category .box-container .box .content  {
+    position: absolute;
+    bottom: -5.5rem;
+    background: var(--Light-White);
+    border-top: .1rem solid rgba(0,0,0,0.3);
+    text-align: center;
+    padding: .5rem 0;
+    width: 100%;
+}
+
+.category .box-container .box:hover .content {
+    bottom: 0;
+}
+
+.category .box-container .box .content h3 {
+    color: var(--text-Color);
+    font-size: 2.5rem;
+    padding: .5rem 0;
+}
+
+.category .box-container .box .content .btn {
+    margin-bottom: 1.2rem;
+    color: #FFF;
+    background-color: var(--text-Color);
+}
+
+.product .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.product .box-container .box {
+    flex:1 1 30rem;
+    border:.1rem solid rgba(0,0,0,0.3);
+    box-shadow: var(--box-Shadow);
+    text-align: center;
+    position:relative;
+    overflow: hidden;
+}
+
+.product .box-container .box img {
+    height: 30rem;
+    width: 100%;
+    border-bottom:.1rem solid rgba(0,0,0,0.3);
+    object-fit: cover;
+}
+
+.product .box-container .box .discount {
+    position: absolute;
+    top: 1rem; left: 1rem;
+    background-color: var(--Header-bacco);
+    color: var(--Background-Selection);
+    padding: .5rem 1rem;
+    border-radius: .7rem;
+    font-weight: var(--font-Banner-Weight);
+    font-size: 2rem;
+}
+
+.product .box-container .box .icons {
+    position: absolute;
+    top: 1rem; right: -8rem;
+    display: flex;
+    flex-flow: column;
+    background-color: var(--Light-White);
+    box-shadow: var(--box-Shadow);
+    border-radius: 5rem;
+    padding: .5rem;
+}
+
+.product .box-container .box:hover .icons {
+    right: 1rem;
+}
+
+.product .box-container .box .icons a {
+    color: #333;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    width: 4rem;
+    margin:.1rem;
+    font-size: 1.5rem;
+    border-radius: 5rem;
+}
+
+.product .box-container .box .icons a:hover {
+    color: #FFF;
+    background-color: var(--Button-Hover);
+} 
+
+.product .box-container .box h3 {
+    color: #222;
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+
+.product .box-container .box .stars i {
     color: var(--Icon-Hover);
+    font-size: 2rem;
+    cursor: pointer;
 }
 
+.product .box-container .box .quantity {
+    padding: 1rem 0;
+}
 
+.product .box-container .box .quantity span{
+    font-size: 2rem;
+}
 
+.product .box-container .box .quantity input{
+    font-size: 2rem;
+    padding: .5rem;
+    text-align: center;
+    background-color: rgba(184, 235, 169, 0.466);
+}
 
+.product .box-container .box .price {
+    font-weight: var(--font-Banner-Weight);
+    color: var(--text-Color);
+    font-size: 2rem;
+}
 
+.product .box-container .box .price span {
+    text-decoration: line-through;
+    font-size: 1.3rem;
+    font-weight: normal;
+    color: var(--Background-Selection);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.product .box-container .box .btn {
+    display: block;
+    margin: 2rem;
+}
 
 
 
@@ -258,6 +461,9 @@ section {
     .header-2,
     .header-3 {
         padding: 2rem;
+    }
+    section {
+        padding: 1.5rem;
     }
 }
 
@@ -298,6 +504,23 @@ section {
     .header-2 .search-bar-container {
         width: 100%;
         margin-top: 2rem;
+    }
+    .home .home-slider .box {
+        background-position: right !important;
+        z-index: 0;
+    }
+    .home .home-slider .box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background: rgba(255,255,255,.4);
+    }
+    .home .home-slider .content h3 {
+        font-size: 4.5rem ;
     }
 }
 
